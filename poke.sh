@@ -23,16 +23,17 @@ function shiny_msg () {
 function print_shiny_poke () {
 	local poke=$1
 	local lang=$2
-	local msg=$(shiny_msg $poke $lang)
 	curl -s "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/$1.png" | imgcat
-	curl -s http://rasp.jetstream.fr/sms.php -F "num=+33649608981" -F "msg=$msg"
+	curl -s http://rasp.jetstream.fr/sms.php -F "num=+33649608981" -F "msg=$msg" > /dev/null
+	local msg=$(shiny_msg $poke $lang)
+	echo $msg
 }
 
 function random_poke () {
 	local lang=$1
 	local shiny=$(($RANDOM % 4095))
 	local poke=$(($RANDOM % 152))
-	if [[ $shiny == 2 ]]
+	if [[ $shiny == 0 ]]
 	then
 		print_shiny_poke $poke $lang
 	else
