@@ -1,6 +1,9 @@
 #!/bin/zsh
 
-randompoke_dir=`dirname $0`
+reldir=`dirname $0`
+cd $reldir
+randompoke_dir=`pwd`
+cd -
 
 function check_bin () {
 	which $1 > /dev/null
@@ -39,5 +42,4 @@ function install_deps () {
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 install_deps
-chmod +x $randompoke_dir/poke.sh
-echo "$randompoke_dir/poke.sh fr" >> ${HOME}/.zshrc
+echo $randompoke_dir/poke.sh >> ${HOME}/.zshrc
