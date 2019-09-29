@@ -1,5 +1,7 @@
 # random_poke
 
+![Screenshot](demo.png?raw=true "A pokémon in the shell")
+
 If you don't know what this is, you probably don't want to install it.
 
 Needs homebrew, iterm2, and zsh.
