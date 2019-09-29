@@ -24,7 +24,7 @@ function install_deps () {
 	else
 		echo "Couldn't find jq. Installing..."
 		echo "========================================"
-		brew install jq
+		BREW_NO_AUTO_UPDATE=1 brew install jq
 		echo "========================================"
 		echo "Done."
 	fi
