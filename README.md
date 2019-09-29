@@ -2,7 +2,7 @@
 
 If you don't know what this is, you probably don't want to install it.
 
-Needs brew, iterm2, and zsh.
+Needs homebrew, iterm2, and zsh.
 
 ```git clone https://github.com/cpireyre/random_poke.git && cd random_poke && ./install.sh && zsh```
 
